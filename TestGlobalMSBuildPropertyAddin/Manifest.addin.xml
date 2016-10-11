@@ -1,0 +1,28 @@
+﻿<ExtensionModel>
+
+	<Runtime>
+		<Import assembly="TestGlobalMSBuildPropertyAddin.dll" />
+	</Runtime>
+
+	<Extension path="/MonoDevelop/Ide/Commands">
+		<Category _name="Test" id="Test">
+			<Command
+				id="TestGlobalMSBuildPropertyAddin.RunBuild"
+				_description="Runs build with a custom global MSBuild property"
+				_label="Run Build with Global MSBuild Property"
+				defaultHandler="TestGlobalMSBuildPropertyAddin.RunBuildHandler" />
+		</Category>
+	</Extension>
+
+	<Extension path="/MonoDevelop/Ide/MainMenu/Build">
+			<SeparatorItem
+				id="TestGlobalMSBuildPropertyAddinSeparator"
+				insertafter="MonoDevelop.Ide.Commands.ProjectCommands.Clean"
+				insertbefore="Separator1" />
+			<CommandItem
+				id="TestGlobalMSBuildPropertyAddin.RunBuild"
+				insertafter="CreateTestGlobalMSBuildPropertyAddinSeparator"
+				insertbefore="Separator1" />
+	</Extension>
+
+</ExtensionModel>
